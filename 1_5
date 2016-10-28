@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<stdlib.h>
+int b=1;
+int fact(int a)
+{
+	if(a==1)
+	{
+		return 1;
+	}
+	else
+	{
+		return a*fact(a-1);
+	}
+}
+int main()
+{
+	printf("%d",fact(10));
+	system("pause");
+	return 0;
+}
