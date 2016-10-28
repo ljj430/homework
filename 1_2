@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	int x,i=0;
+	while(i==0){
+	printf("请输入成绩:");
+	scanf("%d",&x);
+	if(x>=90&&x<=100)
+	{
+		i=1;
+		printf("你的成绩:A\n");
+	}
+	if(x>=80&&x<90)
+	{
+		i=1;
+		printf("你的成绩:B\n");
+	}	
+	if(x>=70&&x<80)
+	{
+		i=1;
+		printf("你的成绩:C\n");
+	}
+	if(x>=60&&x<70)
+	{
+		i=1;
+		printf("你的成绩:D\n");
+	}
+	if(x>=0&&x<60)
+	{
+		i=1;
+		printf("你的成绩:F\n");
+	}
+	else
+	{
+		printf("输入错误\n");
+		i=0;
+	}
+	}
+	
+}
