@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+float fac(int );
+float fac(int a)
+{
+	float b=1.0;
+	for(float i=1.0;i<=(float)a;i=i+1.0)
+	{
+		b*=i;
+	}
+	b=(float)1/b;
+	return b;
+	
+}
+int main()
+{
+	float sum=0.0;
+	for(int i=1;i<=10;i++)
+	{
+		sum+=fac(i);
+	}
+	printf("sum=%.2f",sum);
+	system("pause");
+	return 0;
+}
