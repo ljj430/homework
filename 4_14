@@ -1,0 +1,63 @@
+#include<stdio.h>
+void calculate(int year,int month,int day)
+{
+	int monthsum=0;
+	int checkyear=0;
+	if((year%4==0&&year%100!=0)||year%400==0)
+	{
+		checkyear=1;
+	}
+	switch(month)
+	{
+	case 1:
+		monthsum=0;
+		break;
+	case 2:
+		monthsum=31;
+		break;
+	case 3:
+		monthsum=59;
+		break;
+	case 4:
+		monthsum=90;
+		break;
+	case 5:
+		monthsum=120;
+		break;
+	case 6:
+		monthsum=151;
+		break;
+	case 7:
+		monthsum=181;
+		break;
+	case 8:
+		monthsum=212;
+		break;
+	case 9:
+		monthsum=243;
+		break;
+	case 10:
+		monthsum=273;
+		break;
+	case 11:
+		monthsum=304;
+		break;
+	case 12:
+		monthsum=334;
+		break;
+	}
+	if(checkyear==1&&month>=3)
+	{
+		monthsum+=1;
+	}
+	printf("%d",monthsum+day);
+}
+
+int main()
+{
+	int year=2016;
+	int month=6;
+	int day=1;
+	calculate(year,month,day);
+	return 0;
+}
