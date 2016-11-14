@@ -1,0 +1,11 @@
+#include<stdio.h>
+void transform(int n)
+{
+	printf("%c",n);
+}
+int main()
+{
+	int n=66;
+	transform(n);
+	return 0;
+}
