@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int a[10];
+	int i=10;
+	for(i=9;i>=0;i--)
+	{
+		scanf("%d",&a[i]);
+		
+	}
+	for(int n=0;n<10;n++)
+	{
+		printf("%d ",a[n]);
+	}
+	return 0;
+	
+}
