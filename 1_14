@@ -2,6 +2,7 @@
 #include<stdlib.h>
 int check(int a)
 {
+	
 	int x;
 	if(a%4==0&&a%100!=0)
 	{
