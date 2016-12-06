@@ -1,0 +1,43 @@
+#include<stdio.h>
+int Strlen(char *a)
+{
+	int b=0;
+	while(*a++!='\0')
+	{
+		b++;
+	}
+	return b;
+}
+void Strcpy(char s1[],char s2[])
+{
+	int i=0;
+	while(s1[i]!='\0')
+	{
+		s2[i]=s1[i];
+		i++;
+	}
+	s2[i]='\0';
+}
+void Strcat(char s1[],char s2[])
+{
+	int i,j;
+	for(i=0;s1[i]!='\0';i++);
+	for(j=0;s2[j]!='\0';j++)
+	{
+		s1[i++]=s2[j];
+	}
+	s1[i]='\0';
+}
+int main()
+{
+	char a[10]="1234567";
+	char b[50]="8";
+	char c[50];
+	Strcpy(a,c);
+	printf("%s",c);
+	Strcat(a,b);
+	printf("%s",a);
+	printf("%d",Strlen(a));
+
+	return 0;
+}
