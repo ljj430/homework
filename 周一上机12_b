@@ -1,0 +1,72 @@
+#include<stdio.h>
+int flag=1;
+double calculator (char ptr[])
+{
+	char a;
+	int i=0;
+	double sum1=0.0,sum2=0.0,sum;
+	if('0'>ptr[i]&&ptr[i]>'9')
+	{
+		flag=0;
+		return 0;
+	}
+	while('0'<=ptr[i]&&ptr[i]<='9')
+	{
+		sum1=sum1*10+(ptr[i]-'0');
+		i++;
+		if(ptr[i]!='+'&&ptr[i]!='-'&&ptr[i]!='*'&&ptr[i]!='/'&&'0'>ptr[i]&&ptr[i]>'9')
+		{
+			flag=0;
+			return 0;
+		}
+	}
+
+	a=ptr[i];
+	i++;
+	while('0'<=ptr[i]&&ptr[i]<='9')
+	{
+		sum2=sum2*10+(ptr[i]-'0');
+		i++;
+		if(ptr[i]!='\0'&&'0'>ptr[i]&&ptr[i]>'9')
+		{
+			flag=0;
+			return 0;
+		}
+
+	}
+
+	if(a=='+')
+		sum=sum1+sum2;
+	else if(a=='-')
+		sum=sum1-sum2;
+
+	else if(a=='*')
+		sum=sum1*sum2;
+
+	else if(a=='/')
+		sum=sum1/sum2;
+	
+	else
+	{
+		flag=0;
+		return 0;
+
+	}
+	return sum;
+}
+int main()
+{
+	char a[100];
+	scanf("%s",a);
+	double sum=calculator(a);
+	if(flag==0)
+	{
+		printf("Input Error\n");
+		return 0;
+	}
+	else
+	{
+		printf("%.2lf\n",sum);
+		return 0;
+	}
+}
