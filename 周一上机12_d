@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int n,every[4],i,j;
+	double max;
+	scanf("%d",&n);
+	int *num = (int *)malloc(n*sizeof(int));
+	double *average = (double *)malloc(n*sizeof(double));
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<4;j++)
+		{
+			scanf("%d",&every[j]);
+		}
+		average[i] = (double)(every[1]+every[2]+every[3])/3;
+		num[i] = every[0];
+	}
+	max = average[0];
+	j = 0; 
+	for(i=0;i<n;i++)
+	{
+		printf("%.2lf\n",average[i]);
+		if(average[i]>max)
+		{
+			max = average[i];
+			j = i;
+		}
+	}
+	printf("%d %.2lf\n",num[j],average[j]);
+	for(i=0;i<n;i++)
+	{
+		if(average[i]==max && i!=j)
+		{
+			printf("%d %.2lf\n",num[i],average[i]);
+		}
+	}
+	free(num);
+	free(average);
+	return 0;
+}
