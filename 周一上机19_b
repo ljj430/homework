@@ -1,0 +1,44 @@
+
+#include<stdio.h>
+int main()
+{
+	int a,b,c;
+	int i,j;
+	int sum=1;
+	scanf("%d%d%d",&a,&b,&c);
+	if(c>b)
+	{
+		printf("Input Error\n");
+		return 0;
+	}
+	else
+	{
+		if(a>=b)
+		{
+		for(i=1;i<=b;i++)
+		{
+			sum*=i;
+		}
+		for(i=0;i<b-c;i++)
+		{	
+			for(i=1;i<a-b;i++)
+			{
+				sum*=2;
+			}
+			sum*=2;
+		}
+		}
+		else 
+		{
+			for(i=1;i<=b;i++)
+			{
+				sum*=i;
+			}
+			sum/=2;
+		}
+
+		printf("%d\n",sum);
+	}
+	return 0;
+
+}
