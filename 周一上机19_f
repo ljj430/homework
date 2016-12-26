@@ -1,0 +1,52 @@
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	struct person
+	{
+		char name[5];
+		int num;
+	};
+	int i=0;
+	struct person b[4];
+	char name1[4][5]={{"ZS"},{"LS"},{"WW"},{"QQ"}};
+
+	for(i=0;i<4;i++)
+	{
+		b[i].num=0;
+	}
+	int n;
+	scanf("%d",&n);
+	
+	char a[100];
+	for(i=0;i<n;i++)
+	{
+		scanf("%s",a);
+		if(strcmp(a,"ZS")==0)
+		{
+			b[0].num++;
+		}
+		else	if(strcmp(a,"LS")==0)
+		{
+			b[1].num++;
+		}
+		else	if(strcmp(a,"WW")==0)
+		{
+			b[2].num++;
+		}	
+		else
+		{
+			b[3].num++;
+		}
+
+	}
+	for(i=0;i<4;i++)
+	{
+		printf("%s:",name1[i]);
+		printf("%d\n",b[i].num);
+	}
+
+
+	return 0;
+}
